@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
 	const [num, setNum] = useState(0);
+
+	useEffect(() => {
+		console.log('redy');
+	},[])
 
 	const countUp = () => {
 		setNum(num => ++num)
