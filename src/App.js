@@ -1,25 +1,26 @@
-import { useEffect, useState } from "react";
+import Song from "./Components/Song";
 
+import './App.css';
 function App() {
-	const [count, setCount] = useState(0);
-	const [deg, setDeg] = useState(0);
-
-	useEffect(() => {
-		console.log('worked...');
-	})
-
-	const chengeFirst = () => {
-		setCount(count => count + 1)
-	}
-	const chengeSecond = () => {
-		setDeg(deg => deg + 10)
-	}
+	
 	return (
-		<div >
-			<h2>Current-{count}</h2>
-			<h2>Current-{deg}</h2>
-			<button onClick={chengeFirst}>chenge first</button>
-			<button onClick={chengeSecond}>chenge second</button>
+		<div className="App">
+			<h1>Playlist</h1>
+			<Song
+				title="I have Nothing"
+				singer="Whitnney Houston"
+				duration="3"
+			/>
+			<Song
+				title="Image"
+				singer="John Lenon"
+				duration="5.3"
+			/>
+			<Song
+				title="Yesterday"
+				singer="The Beatels"
+				duration="4.2"
+			/>
 		</div>
 	);
 
