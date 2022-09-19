@@ -1,28 +1,24 @@
+import { useState } from "react";
 
-import React from 'react';
+function App() {
+	const [num, setNum] = useState(0);
 
+	const countUp = () => {
+		setNum(num => ++num)
+	}
 
-class App extends React.Component {
-	state = { num: 0 };
-
-	countUp = () => {
-		this.setState(current => {
-			return {
-				num: current.num + 1
-			};
-		})
-	};
-	render() {
+	const countDown = () => {
+		setNum(num => --num)
+	}
 	
-		console.log("render",this.a);
-		const { num } = this.state
-		return (
-			<div >
-				<h1>number - {num}</h1>
-				<button onClick={this.countUp}>UP</button>
+	return (
+		<div >
+				<h1>number-({num})</h1>
+			<button onClick={countUp}>UP</button>
+			<button onClick={countDown}>Down</button>
 			</div>
 		);
-	}
+	
 }
 
 export default App;
